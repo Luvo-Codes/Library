@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-.remove-btn .toggle-read-btn {
+.remove-btn {
     position: relative;
     background-color: red;
     color: white;

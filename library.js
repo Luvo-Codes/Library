@@ -1,7 +1,3 @@
-const myLibrary = [
-    { title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 310, read: false },
-    { title: '1984', author: 'George Orwell', pages: 328, read: true }
-];
 
 // Book object constructor
 class Book {
@@ -13,6 +9,11 @@ class Book {
     }
     
 };
+
+const myLibrary = [
+    new Book('The Hobbit', 'J.R.R. Tolkien', 310, false),
+    new Book('1984', 'George Orwell', 328, true),
+];
 
 Book.prototype.toggleReadStatus = function() {
     this.read = !this.read;
@@ -60,7 +61,7 @@ function displayBooks() {
     toggleReadBtn.forEach(button => {
         button.addEventListener('click', function() {
             const index = this.getAttribute('data-index');
-            myLibrary.indexOf(index).toggleReadStatus();
+            myLibrary[index].toggleReadStatus();
             displayBooks();
         });
     });
